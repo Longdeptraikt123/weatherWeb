@@ -1,0 +1,95 @@
+.content {
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    .content-location-box {
+        margin: 20px 0;
+
+        .box-location {
+            font-size: 40px;
+            font-weight: 500;
+            color: #fff;
+            text-align: center;
+            text-shadow: 3px 3px rgba(50, 50, 70, 0.5);
+        }
+
+        .box-date {
+            text-align: center;
+            padding: 10px;
+            font-size: 23px;
+            font-weight: 300;
+            font-style: italic;
+            color: #fff;
+            text-shadow: 2px 2px rgba(50, 50, 70, 0.5);
+        }
+    }
+
+    .content-weather-box {
+        text-align: center;
+
+        .temp {
+            position: relative;
+            display: inline-block;
+            margin: 10px auto 30px auto;
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            padding: 15px 25px;
+            color: #fff;
+            font-size: 70px;
+            font-weight: 800;
+            text-shadow: 3px 6px rgba(50, 50, 70, 0.5);
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        }
+
+        .weather {
+            font-size: 60px;
+            color: #fff;
+            font-weight: 700;
+            text-shadow: 2px 2px rgba(50, 50, 70, 0.5);
+
+        }
+
+        .content-weather-another {
+            display: flex;
+            width: auto;
+            justify-content: space-between;
+            align-items: center;
+            margin: 40px 0;
+
+            .another-1 {
+                display: flex;
+                font-size: 24px;
+                font-weight: 500;
+                color: #fff;
+                margin: 0 50px;
+            }
+
+            .another-2 {
+                display: flex;
+                font-size: 24px;
+                font-weight: 500;
+                color: #fff;
+                margin: 0 50px;
+
+            }
+        }
+    }
+
+    .content-weather-icons {
+        margin: 30px 0;
+
+        .icons {
+            .icon {
+                margin: 0 10px;
+                font-size: 23px;
+                font-weight: 600;
+                color: #fff;
+                cursor: pointer;
+            }
+        }
+    }
+}
