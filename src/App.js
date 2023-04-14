@@ -1,7 +1,6 @@
 import './App.css';
 import Header from './components/header'
 import Content from './components/content'
-import axios from 'axios'
 import { createContext, useState } from 'react';
 export const WeatherContext = createContext(null)
 function App() {
@@ -23,7 +22,7 @@ function App() {
         if (e.key === 'Enter') {
             async function fetchData() {
                 try {
-                    await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${query}&units=imperial&APPID=6573ed0b8c8d4a642450eba6bcf8009a`)
+                    await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${query}&units=imperial&APPID=6573ed0b8c8d4a642450eba6bcf8009a`)
                         .then(res => res.json())
                         .then(data => {
                             setWeatherData(data)
