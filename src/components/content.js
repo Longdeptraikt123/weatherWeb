@@ -17,7 +17,7 @@ function Content() {
                     {data.weatherData.weather ? <p>{data.weatherData.weather[0].main}</p> : null}
                 </div>
                 {data.weatherData.cod === '404' ? (
-                    <p style={{ fontSize: '25px', color: 'crimson', fontWeight: '500' }}>City not found .</p>
+                    <p style={{ fontSize: '25px', color: 'crimson', fontWeight: '500' }}>{data.weatherData.message}</p>
                 ) : (
                     <>
                     </>
