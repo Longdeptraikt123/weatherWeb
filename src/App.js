@@ -1,7 +1,7 @@
 import './App.css';
 import Header from './components/header'
 import Content from './components/content'
-import { createContext, useState } from 'react';
+import { createContext, useLayoutEffect, useState } from 'react';
 export const WeatherContext = createContext(null)
 function App() {
 
@@ -17,29 +17,44 @@ function App() {
 
     const [query, setQuery] = useState('')
     const [weatherData, setWeatherData] = useState({})
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=${query}&units=imperial&APPID=6573ed0b8c8d4a642450eba6bcf8009a`
+    const urlDefault = `https://api.openweathermap.org/data/2.5/weather?q=kon tum&units=imperial&APPID=6573ed0b8c8d4a642450eba6bcf8009a`
+
+    useLayoutEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await fetch(urlDefault);
+                const data = await response.json();
+                setWeatherData(data)
+                setQuery('')
+            }
+            catch (error) {
+                console.log(error);
+            }
+        };
+
+        fetchData();
+
+    }, [urlDefault])
 
     const search = (e) => {
         if (e.key === 'Enter') {
-            async function fetchData() {
+            const fetchData = async () => {
                 try {
-                    await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${query}&units=imperial&APPID=6573ed0b8c8d4a642450eba6bcf8009a`)
-                        .then(res => res.json())
-                        .then(data => {
-                            setWeatherData(data)
-                            setQuery('')
-                            console.log(data);
-                        }
-                        )
+                    const response = await fetch(url);
+                    const data = await response.json();
+                    e.preventDefault();
+                    setWeatherData(data)
+                    setQuery('')
                 }
                 catch (error) {
                     console.log(error);
                 }
             }
             fetchData()
-
-
         }
     }
+
 
     const value = {
         dateBuilder,

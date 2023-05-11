@@ -4,9 +4,11 @@ import { WeatherContext } from "../App";
 function Header() {
     const data = useContext(WeatherContext)
     const ref = useRef(null)
+
     useEffect(() => {
         ref.current.focus()
     }, [])
+
     return (
         <div className='header'>
             <input
