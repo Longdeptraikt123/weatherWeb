@@ -3,6 +3,8 @@ import { WeatherContext } from "../App";
 import './content.scss'
 function Content() {
     const data = useContext(WeatherContext)
+    const isWeatherDataAvailable = data.weatherData.main !== undefined;
+
     return (
         <div className="content">
             <div className="content-location-box">
@@ -11,7 +13,11 @@ function Content() {
             </div>
             <div className="content-weather-box">
                 <div className="temp">
-                    {data.weatherData.main ? <p>{data.weatherData.main.temp}ºF</p> : null}
+                    {isWeatherDataAvailable ? (
+                        <p>{data.weatherData.main.temp}ºF</p>
+                    ) : (
+                        <p>Not found</p>
+                    )}
                 </div>
                 <div className="weather">
                     {data.weatherData.weather ? <p>{data.weatherData.weather[0].main}</p> : null}

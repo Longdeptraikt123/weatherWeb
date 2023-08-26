@@ -16,8 +16,8 @@ function Header() {
                 type="text"
                 className="header-search-bar"
                 placeholder='search...'
-                onChange={(e) => data.setQuery(e.target.value)}
-                value={data.query}
+                onChange={(e) => data.setCountry(e.target.value)}
+                value={data.country}
                 onKeyDown={data.search}
             />
         </div>
