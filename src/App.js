@@ -47,7 +47,7 @@ function App() {
             const response = await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${newCity}&units=imperial&APPID=6573ed0b8c8d4a642450eba6bcf8009a`);
             return response.data;
         } catch (error) {
-            throw new Error(error.response.data.message || 'An error occurred');
+            console.log(error);
         }
     };
 
